@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const HOST_URL = 'http://localhost:5000';
+const HOST_URL = process.env.REACT_APP_HOST_URL || 'http://localhost:5000';
 const THERAPIST_API_URL = `${HOST_URL}/therapists`;
 
 const Table = styled.table`

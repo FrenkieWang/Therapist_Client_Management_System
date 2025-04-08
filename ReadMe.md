@@ -75,40 +75,41 @@ Students are encouraged to seek assistance from demonstrators for clarification 
 ## Project Structure
 
 ```
-frontend/                  # Project root directory
+frontend/                  # Frontend root directory
+├── public/                # Static public assets
+│   └── index.html         # HTML template
 ├── src/                   # Source code directory
-│   ├── pages/             # Directory for page-level components
-│   │   ├── Album.js       # Album page component
-│   │   ├── AlbumsModal.js # Each Artist's Album
-│   │   ├── Artist.js      # Artist page component
+│   ├── pages/             # React page components
+│   │   ├── Client.js      # Client page component
 │   │   ├── Home.js        # Home page component
-│   │   ├── Song.js        # Song page component
-│   │   ├── SongsModal.js  # Each Artist/Album's song
-│   ├── App.js             # Main application component
-│   └── index.js           # Entry point for the React application
-├── .env                   # Environment variable configuration file
-├── .gitignore             # Git ignore rules
-├── package.json           # Project metadata and dependency configuration
-├── package-lock.json      # Exact version lock for dependencies
-└── model.sql              # SQL file for database model definitions
+│   │   ├── Session.js     # Session page component
+│   │   └── Therapist.js   # Therapist page component
+│   ├── App.js             # Main React component with routing logic
+│   └── index.js           # React entry point
+├── .gitignore             # Files and folders ignored by Git
+├── package.json           # Project metadata and frontend dependencies
+├── package-lock.json      # Locked versions of dependencies
+└── README.md              # Project documentation
 ```
 
 ```
 backend/                   # Backend root directory
-├── controllers/           # Controller logic (handles request processing)
-│   ├── albumController.js # Controller for album-related logic
-│   ├── artistController.js# Controller for artist-related logic
-│   └── songController.js  # Controller for song-related logic
-├── routes/                # API route definitions
-│   ├── albumRoutes.js     # Routes for album endpoints
-│   ├── artistRoutes.js    # Routes for artist endpoints
-│   └── songRoutes.js      # Routes for song endpoints
+├── controllers/           # Request handling logic
+│   ├── clientController.js    # Controller for client-related operations
+│   ├── sessionController.js   # Controller for session-related operations
+│   └── therapistController.js # Controller for therapist-related operations
+├── routes/                # Express route definitions
+│   ├── clientRoutes.js        # Routes for client APIs
+│   ├── sessionRoutes.js       # Routes for session APIs
+│   └── therapistRoutes.js     # Routes for therapist APIs
 ├── node_modules/          # Installed backend dependencies
-├── .env                   # Environment variables
-├── .gitignore             # Git ignore rules
-├── db.js                  # Database connection configuration
-├── package.json           # Project metadata and dependencies
-├── package-lock.json      # Dependency version lock
-├── server.js              # Entry point for backend server (Express app)
-└── vercel.json            # Vercel deployment configuration
+├── .env                   # Environment variable configuration
+├── db.js                  # Database connection logic
+├── package.json           # Backend project metadata and dependencies
+├── package-lock.json      # Locked backend dependency versions
+└── server.js              # Express server entry point
+```
+
+```
+└── model.sql              # SQL schema definitions
 ```

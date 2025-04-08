@@ -121,7 +121,7 @@ function Session() {
           : JSON.parse(session.clientsList);
 
         setForm({
-          therapist_id: session.therapist_id,
+          therapist_id: session.therapist_id.toString(),
           session_date: formatDate(session.session_date),
           session_length: session.session_length,
           regularity: session.regularity,
@@ -178,14 +178,22 @@ function Session() {
       <Link to="/">Back to HomePage</Link>
       <hr />
       <div>
-        <select name="therapist_id" value={form.therapist_id} onChange={handleChange} required>
-          <option value="">Select Therapist</option>
-          {therapists.map(t => (
-            <option key={t.therapist_id} value={t.therapist_id}>
-              {t.name} ({t.availability})
-            </option>
-          ))}
-        </select>
+      <div>
+        <label>Therapist:</label>
+        {therapists.map(t => (
+          <label key={t.therapist_id} style={{ marginRight: '10px', display: 'block' }}>
+            <input
+              type="radio"
+              name="therapist_id"
+              value={t.therapist_id}
+              checked={form.therapist_id === t.therapist_id.toString()}
+              disabled={t.availability === 'NOT TAKING CLIENTS'}
+              onChange={handleChange}
+            />
+            {t.name} ({t.availability})
+          </label>
+        ))}
+      </div>
         <input 
           type="date" 
           name="session_date" 

@@ -5,10 +5,11 @@
 Completing a simple system for a user to manage therapists, clients and sessions.
 
 Backend deployment:
-https://cs230-lab3-backend.vercel.app/
+https://therapist-client-management-system-api.vercel.app
 
 Frontend deployment:
-https://full-stack-music-application.vercel.app/# Full-Stack Music Application
+https://therapist-client-session-app.vercel.app
+
 
 ## Task Description
 
